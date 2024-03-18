@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>COOK BOOK RECIPE</h2>
+<div mat-dialog-content>
+  <form [formGroup]="recipeform" class="rf">
+    <mat-form-field appearance="outline">
+        <mat-label>NAME OF THE FOOD </mat-label>
+        <mat-icon matSuffix>text_format</mat-icon>
+        <input matInput formControlName="foodname" placeholder="Ex : Dalgona Coffee">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>TIME TO PREPARE</mat-label>
+        <mat-icon matSuffix>watch_later</mat-icon>
+        <input matInput formControlName="timetaken" placeholder="Ex : 1hr 30mins">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>INGREDIENTS</mat-label>
+        <mat-icon matSuffix>shopping_basket</mat-icon>
+        <textarea matInput formControlName="ingredients" placeholder="Ex : Coffee beans, sugar,.."></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>RATING OUT OF 5</mat-label>
+        <mat-icon matSuffix>thumbs_up_down</mat-icon>
+        <input matInput formControlName="rating" placeholder="Ex : 4 / 5">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>REVIEW</mat-label>
+        <mat-icon matSuffix>comment</mat-icon>
+        <textarea matInput formControlName="review" placeholder="Ex : Tasty"></textarea>
+      </mat-form-field>
+</form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+<button mat-raised-button color="accent" style="height: 40px; width: 80px;" (click)="addrecipe(recipeform.value)">{{action}}</button>
+<button mat-raised-button color="warn" mat-dialog-close style="margin-left: 8px; height: 40px; width: 80px;">CANCEL</button>
+</div>
+
+

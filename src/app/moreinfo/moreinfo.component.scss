@@ -1,0 +1,41 @@
+h1 {
+    color: black;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+             Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    margin-top: 15px;
+    font-size: xx-large;
+}
+
+body {
+    height: 67.5%;
+}
+
+.dialog {
+    background-color: rgba(0, 0, 0, 0.411);
+    width: 1300px;
+    margin-left: 60px;
+    height: 500px;
+    border-radius: 15px;
+    color: white;
+}
+
+main{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: x-large;
+    text-shadow: 1px 2px 3px #000000;
+}
+
+p{
+    font-size: medium;
+}
+
+.anchor {
+    margin-left: 20px;
+}

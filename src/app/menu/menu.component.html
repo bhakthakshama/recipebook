@@ -1,0 +1,39 @@
+<body>
+    <br>
+    <div class="head">
+        <br><br>
+        <h1 style="font-weight: bold;font-family: cursive;font-size: x-large;">YOUR RECIPE CARDS</h1>
+    </div>
+    <br><br>
+    <br>
+    <button (click)="newrecipe()" class="btnb" style=" font-style: bolder;">ADD NEW RECIPE</button>
+    <div class="body1">
+        <mat-accordion multi="false">
+            <div class="parent">
+                    <mat-expansion-panel class="panel" *ngFor="let recipe of dataSource;let i = index">
+                        <mat-expansion-panel-header (click)="togglePanel(i)">
+                            <mat-panel-title>{{recipe.foodname.toUpperCase()}}</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <mat-card class="example-card" *ngIf="currentlyOpenPanel === i">
+                            <mat-card-title style="font-family: fantasy;">{{recipe.foodname}}</mat-card-title>
+                            <mat-card-subtitle style="color: rgb(255, 255, 255);font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">RECIPE {{recipe.id}}</mat-card-subtitle>
+                            <mat-card-content>
+                                <div class="row">
+                                    <p>Time Taken To Prepare :- {{recipe.timetaken}}</p>
+                                    <p>Ingredients Used :- {{recipe.ingredients}}</p>
+                                    <p>Ratings on 5 :- {{recipe.rating}}</p>
+                                    <p>Review :- {{recipe.review}}</p>
+                                </div>
+                              <mat-card-actions>
+                                <button (click)="updaterecipe(recipe)" style="font-weight: bold;">UPDATE RECIPE</button>
+                                <button (click)="deleterecipe(recipe.id)" style="margin-left: 10px;font-weight: bold;">DELETE RECIPE</button>
+                            </mat-card-actions>
+                            </mat-card-content>
+                          </mat-card>
+                    </mat-expansion-panel>
+            </div>
+          </mat-accordion>
+    </div>
+</body>
+
+
