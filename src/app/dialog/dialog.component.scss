@@ -1,0 +1,30 @@
+
+.outside {
+    margin-left: 80px;
+    width: 80%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.651);
+    border-radius: 30px;
+}
+
+.inside {
+    margin-left: 50px;
+    width: 85%;
+    height: 68%;
+    background-color: rgba(204, 184, 149, 0.301);
+    border-radius: 30px;
+}
+
+h2{
+    font-size: x-large;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.in {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: 165px;
+    background-image: url('https://cdn1.vectorstock.com/i/1000x1000/07/40/chef-recipes-vintage-neon-sign-recipe-book-logo-vector-22660740.jpg');
+}

@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-image: url('https://img.freepik.com/free-photo/pine-wood-texture_1194-6517.jpg'); }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-image: url('https://media.istockphoto.com/id/1395773756/vector/kitchen-utensils-seamless-pattern.jpg?s=612x612&w=0&k=20&c=bP5QGBKI22B36xD0FNsc5SPLE4lkmel936EeHSEev7c='); }
+
+* {
+    overflow:visible;
+    // background-repeat: no-repeat;
+     background-size: contain;
+}

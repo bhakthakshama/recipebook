@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MoreinfoComponent } from './moreinfo/moreinfo.component';
 import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   { path: 'recipes', redirectTo: '/home', pathMatch: 'full' },

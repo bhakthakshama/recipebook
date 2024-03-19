@@ -1,14 +1,20 @@
 <body>
-    <br>
+    <br><br>
     <div class="head">
         <br><br>
         <h1 style="font-weight: bold;font-family: cursive;font-size: x-large;">YOUR RECIPE CARDS</h1>
     </div>
-    <br><br>
     <br>
-    <button (click)="newrecipe()" class="btnb" style=" font-style: bolder;">ADD NEW RECIPE</button>
+    <mat-form-field appearance="standard" style="color: white;width: 75%;margin-left: 120px;">
+        <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Kshama" #input >
+        </mat-form-field>
+        <div *ngIf="displayedItems.length === 0" style="text-align: center; margin-top: 20px;color: white;font-size: large;">
+            <p>NO MATCHING RECIPES FOUND</p>
+            <br>
+        </div>
     <div class="body1">
-        <mat-accordion multi="false">
+        <mat-accordion multi="false" matSort>
             <div class="parent">
                     <mat-expansion-panel class="panel" *ngFor="let recipe of dataSource;let i = index">
                         <mat-expansion-panel-header (click)="togglePanel(i)">
@@ -34,6 +40,7 @@
             </div>
           </mat-accordion>
     </div>
+    <br><br>
+    <button (click)="newrecipe()" class="btnb" style=" font-style: bolder;">ADD NEW RECIPE</button>
+    <br><br><br><br>  <br><br><br><br>  <br><br><br><br>
 </body>
-
-

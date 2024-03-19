@@ -20,6 +20,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MenuComponent } from './menu/menu.component';
+import { MatSortModule } from '@angular/material/sort';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { MenuComponent } from './menu/menu.component';
     FooterComponent,
     MoreinfoComponent,
     MenuComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { MenuComponent } from './menu/menu.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

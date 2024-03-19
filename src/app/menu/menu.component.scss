@@ -1,14 +1,16 @@
 .mat-form-field {
     margin-left: 8px;
+    display: block;
   }
 
 body {
     margin-top: 50px;
-    max-width: 800px;
+    max-width: 1000px;
     background-image: url('https://img.freepik.com/free-photo/grunge-style-background-with-old-wooden-texture_1048-10332.jpg');
-    margin-left: 300px;
-    height: 2000px;
+    margin-left: 210px;
+    //height: 2000px;
     border-radius: 10px;
+    height: max-content;
 }
 
 .head {
@@ -17,11 +19,11 @@ body {
     font-family: cursive;
     text-align: center;
     margin-top: 20px;
-    margin-left: 30px;
+    margin-left: 95px;
     height:110px;
     font-weight: bold;
     border-radius: 20px;
-    width: 740px;
+    width: 800px;
 }
 
 button {
@@ -29,7 +31,7 @@ button {
 }
 
 .btnb {
-    margin-left: 300px;
+    margin-left: 390px;
     height: 40px;
     width: 200px;
 }
@@ -43,14 +45,14 @@ button {
 .body1 {
     margin-top: 50px;
     background-color: rgba(231, 227, 222, 0.13);
-    width: 700px;
+    width: 800px;
     max-height:1000px;
-    margin-left: 50px;
+    margin-left: 95px;
     border-radius: 20px;
 }
 
 .panel {
-    width: 615px;
+    width: 720px;
     background-color: rgba(116, 112, 112, 0.425);
 }
 

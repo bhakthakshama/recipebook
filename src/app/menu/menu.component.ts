@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { FormDataComponent } from '../form-data/form-data.component';
 import { ApiService } from '../service/api.service';
+import {MatAccordion} from '@angular/material/expansion';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-menu',
@@ -10,13 +12,17 @@ import { ApiService } from '../service/api.service';
 })
 export class MenuComponent implements OnInit {
 
-  //curPanelIndex : number | null = null;
-
-  //curPanelIndex : boolean[] = [];
-
   dataSource: any[]=[];
 
+  displayedItems: any[] = [];
+  @ViewChild(MatAccordion) accordion !: MatAccordion;
+  @ViewChild(MatSort) sort !: MatSort;
+
   constructor(private dialog : MatDialog, private api : ApiService) { }
+  
+  ngOnInit(): void {
+    this.getAllRecipes();
+   }
 
   currentlyOpenPanel: number | null = null;
 
@@ -28,43 +34,50 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  // togglePanel(id : number)
-  // {
-    // if(this.curPanelIndex === id)
-    // {
-    //   this.curPanelIndex = null;
-    // }
-    // else{
-    //   this.curPanelIndex = id;
-    // }
-
-    //console.log("toggle id : " +id);
-    //this.curPanelIndex[id] = !this.curPanelIndex[id];
-    //this.curPanelIndex = this.curPanelIndex === id ? null : id;
-
-  // }
-
-  // expandPanel(index : number) : boolean
-  // {
-  //   return this.curPanelIndex[index];
-  //   return this.curPanelIndex === index;
-  // }
-
-  ngOnInit(): void {
-   this.getAllRecipes();
+  applyFilter(event : Event) {
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.displayedItems = this.dataSource.filter(recipe =>
+      recipe.foodname.toLowerCase().includes(filterValue)
+    );
+    //this.applySorting();
   }
+
 
   getAllRecipes() {
     this.api.getrecipe().subscribe({
       next: (res) => {
         this.dataSource = res;
-        //this.curPanelIndex = new Array(this.dataSource.length).fill(false);
+        this.displayedItems = [...this.dataSource];
+        // console.log("Fetched recipes:", this.dataSource);
+        // console.log("DisplayedItems : "+this.displayedItems);
+       // this.applySorting();
       },
       error: (err) => {
         alert("Error while retrieving the employee records.. Please check !");
       }
     });
   }
+
+  // applySorting() {
+  //   // if (this.sort && this.dataSource) {
+  //   //   console.log(this.dataSource.sort +""+ this.sort);
+  //   // }
+  //   if (this.sort && this.displayedItems && this.displayedItems.length > 0) {
+  //   if (this.sort.active && this.sort.direction) {
+  //     this.displayedItems = this.displayedItems.sort((a, b) => {
+  //       const isAsc = this.sort.direction === 'asc';
+  //       let valueA = a[this.sort.active];
+  //       let valueB = b[this.sort.active];
+
+  //       // Handle cases where sorting column values might be null or undefined
+  //       if (!valueA) valueA = '';
+  //       if (!valueB) valueB = '';
+
+  //       return (valueA < valueB ? -1 : 1) * (isAsc ? 1 : -1);
+  //     });
+  //   }
+  // }
+  // }
 
   newrecipe()
   {
